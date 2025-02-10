@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factsy - Persönliche Fakten</title>
+    <link rel="icon" type="image/png" href="factsy_homepage/src/images/logo_4_round.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5FFFA;
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #87CEFA;
+            color: white;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .container img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .google-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .slider {
+            position: relative;
+            max-width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 75%;
+            border-radius: 10px;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 600px;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #87CEFA;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>factsy</h1>
+        <img src="../factsy_homepage/src/images/logo_4_round.png" alt="FACTSY Logo">
+    </header>
+
+    <div class="container">
+        <img src="../factsy_homepage/src/images/logo_4_round.png">
+        <p>Mit factsy hast du deine persönlichen Fakten immer griffbereit – egal ob unterwegs, in der Schule oder beim Entspannen. Gib einfach ein Stichwort in das Eingabefeld ein und entdecke spannende Fakten, die genau zu dir passen!</p>
+
+        <p>Jeden Tag erwartet dich außerdem ein neuer, faszinierender Fakt, den du direkt in der App entdecken kannst. Damit du nichts verpasst, erhältst du täglich um 8 Uhr eine Push-Benachrichtigung mit deinem Fakt des Tages.</p>
+        
+        <p>Factsy wird stetig weiterentwickelt – freue dich auf neue Features, eine persönliche Faktensammlung und die Möglichkeit, interessante Infos ganz einfach mit Freunden zu teilen!</p>
+                        
+        <div class="slider-container">
+            <div class="slides">
+                <div class="slide"><img src="../factsy_homepage/src/images/screenshot1.png" alt="Screenshot 1"></div>
+                <div class="slide"><img src="../factsy_homepage/src/images/screenshot2.png" alt="Screenshot 2"></div>
+                <div class="slide"><img src="../factsy_homepage/src/images/screenshot3.png" alt="Screenshot 3"></div>
+            </div>
+        </div>
+
+        <p>Du hast interesse an factsy bekommen? <br>
+            Trage dich in unsere Liste ein, um über den start der Beta informiert zu werden. <br>
+            Wir freuen uns auf dich!
+            </p>
+
+        <p>Viele Grüß<br>Dein factsy Team</p>
+
+        <div class="google-form">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdsdI5U6_d0DBb1TytcgJ3PTtNoRTYoQCx7PFN446D88vDlsw/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">Lädt...</iframe>
+        </div>
+    </div>
+
+    <footer>
+        <a href="#">Impressum</a> | <a href="#">Datenschutz</a>
+    </footer>
+
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelector(".slides");
+        const totalSlides = document.querySelectorAll(".slides img").length;
+
+        function moveSlide(direction) {
+            slideIndex += direction;
+            if (slideIndex >= totalSlides) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = totalSlides - 1;
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+    </script>
+
+</body>
+</html>
