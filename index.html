@@ -16,17 +16,17 @@
         }
 
         header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: #87CEFA;
-            color: white;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 30px; /* Ändere den Wert auf 10px oder 15px für einen dünneren Header */
+    background-color: #87CEFA;
+    color: white;
+}
 
-        header img {
-            height: 50px;
-        }
+header img {
+    height: 40px; /* Optional: Hier kannst du auch die Bildhöhe anpassen, falls das Bild zu groß erscheint */
+}
 
         .container {
             text-align: center;
@@ -125,6 +125,27 @@
             border: none;
         }
 
+        footer {
+    background-color: #87CEFA; /* Dunkler Hintergrund */
+    color: white;           /* Textfarbe */
+    text-align: center;     /* Text zentrieren */
+    padding: 20px;          /* Abstand nach innen */
+    position: relative;
+    bottom: 0;
+    width: 100%;            /* Stellt sicher, dass der Footer die ganze Breite einnimmt */
+    margin-top: 50px;       /* Abstand nach oben */
+}
+
+footer a {
+    color: black;         /* Linkfarbe */
+    text-decoration: none;  /* Links ohne Unterstreichung */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Unterstreichen beim Hover */
+}
+
+
     </style>
 </head>
 <body>
@@ -138,6 +159,7 @@
         <!-- Einleitung -->
         <div class="section_intro" id="einleitung">
             <img src="./src/images/logo_4_round.png">
+            <h1>Über factsy</h1>
             <p>Aus einer interessanten Idee heraus wurde Factsy entwickelt. Factsy ist eine App, die es dir ermöglicht, persönliche Fakten, sogenannte "MyFacts", zu verschiedenen Begriffen zu generieren. Jeder Fakt ist individuell und spannend, sodass du Dinge entdecken kannst, die du vielleicht noch nicht wusstest.</p>
         
             <p>Zusätzlich bietet Factsy tägliche Fakten, die "DailyFacts" genannt werden. Diese Fakten sind vielfältig: Sie können motivierend, interessant oder einfach unterhaltsam sein und dir helfen, den Tag mit neuen Ideen zu starten. Sie regen zum Nachdenken und Diskutieren an und können dir so den Einstieg in den Alltag erleichtern.</p>
@@ -194,6 +216,11 @@
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdsdI5U6_d0DBb1TytcgJ3PTtNoRTYoQCx7PFN446D88vDlsw/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">Lädt...</iframe>
         </div>
     </div>
+    <footer>
+        <p>&copy; 2025 Factsy. Alle Rechte vorbehalten.</p>
+        <p><a href="#top">Impressum</a> | <a href="#top">Datenschutz</a></p>
+    </footer>
+    
 
     <script>
         let currentIndex = 0;
