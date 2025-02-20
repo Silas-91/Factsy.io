@@ -46,17 +46,32 @@
             margin: 0 auto 30px auto;
         }
 
-        .google-form {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
+        /* Stil für die Abschnitte */
+        .section_intro {
+            padding: 50px 20px;
+            text-align: center;
         }
 
+        /* Container für beide Divs nebeneinander */
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Jede Section (Div) bekommt eine Breite von 45% */
+.section {
+    width: 45%;
+    margin: 10px; /* Abstand zwischen den Divs */
+}
+
+
+        /* Stil für den Slider */
         .slider {
             position: relative;
             max-width: 80%;
             margin: auto;
-            overflow: hidden;
+            overflow: hidden; /* Nur das aktuell sichtbare Bild anzeigen */
         }
 
         .slides {
@@ -64,11 +79,22 @@
             transition: transform 0.5s ease-in-out;
         }
 
-        .slides img {
-            width: 75%;
-            border-radius: 10px;
+        .slide {
+            min-width: 100%; /* Jeder Slide nimmt 100% der Breite ein */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
+        .slide img {
+            width: 30%; /* Bild passt sich der Containerbreite an */
+            height: auto; /* Höhe bleibt proportional */
+            object-fit: contain; /* Passt das Bild an, ohne es zu verzerren */
+            border-radius: 10px;
+            cursor: pointer; /* Bild wird anklickbar */
+        }
+
+        /* Navigation für prev/next */
         .prev, .next {
             position: absolute;
             top: 50%;
@@ -85,6 +111,13 @@
         .prev { left: 10px; }
         .next { right: 10px; }
 
+        /* Google Forms einbetten */
+        .google-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
         iframe {
             width: 100%;
             max-width: 600px;
@@ -92,25 +125,6 @@
             border: none;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #87CEFA;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
@@ -121,49 +135,86 @@
     </header>
 
     <div class="container">
-        <img src="src/images/logo_4_round.png">
-        <p>Mit factsy hast du deine persönlichen Fakten immer griffbereit – egal ob unterwegs, in der Schule oder beim Entspannen. Gib einfach ein Stichwort in das Eingabefeld ein und entdecke spannende Fakten, die genau zu dir passen!</p>
-
-        <p>Jeden Tag erwartet dich außerdem ein neuer, faszinierender Fakt, den du direkt in der App entdecken kannst. Damit du nichts verpasst, erhältst du täglich um 8 Uhr eine Push-Benachrichtigung mit deinem Fakt des Tages.</p>
+        <!-- Einleitung -->
+        <div class="section_intro" id="einleitung">
+            <img src="./src/images/logo_4_round.png">
+            <p>Aus einer interessanten Idee heraus wurde Factsy entwickelt. Factsy ist eine App, die es dir ermöglicht, persönliche Fakten, sogenannte "MyFacts", zu verschiedenen Begriffen zu generieren. Jeder Fakt ist individuell und spannend, sodass du Dinge entdecken kannst, die du vielleicht noch nicht wusstest.</p>
         
-        <p>Factsy wird stetig weiterentwickelt – freue dich auf neue Features, eine persönliche Faktensammlung und die Möglichkeit, interessante Infos ganz einfach mit Freunden zu teilen!</p>
-                        
-        <div class="slider-container">
+            <p>Zusätzlich bietet Factsy tägliche Fakten, die "DailyFacts" genannt werden. Diese Fakten sind vielfältig: Sie können motivierend, interessant oder einfach unterhaltsam sein und dir helfen, den Tag mit neuen Ideen zu starten. Sie regen zum Nachdenken und Diskutieren an und können dir so den Einstieg in den Alltag erleichtern.</p>
+        
+            <p>Factsy ist eine App, die du überall nutzen kannst – ob auf dem Weg zur Arbeit, in der Schule oder einfach auf der Couch. Sie soll dich inspirieren und die Menschen in deinem Umfeld durch den Austausch über spannende Fakten näher zusammenbringen. So kannst du immer wieder Neues entdecken und deine Interessen weiter erforschen.</p>
+        
+            <p>Die App wurde mit React Native und JavaScript entwickelt und ist als Android-App verfügbar. Das Projekt wurde mit Expo auf einem Mac entwickelt, unter Verwendung von Entwicklungswerkzeugen wie VSCode und unterstützt durch KI-Technologien wie ChatGPT, Gemini und Copilot.</p>
+        </div>
+        <div class="container-flex">  
+        <!-- Features -->
+        <div class="section" id="features">
+            <h2>Aktuelle Features von Factsy</h2>
+            <p>Factsy bietet dir zahlreiche spannende Möglichkeiten, um dein Wissen zu erweitern und interessante Fakten zu entdecken. Unsere Features helfen dir dabei, dein Wissen jeden Tag auf neue Weise zu bereichern:</p>
+            <ul style="list-style-type: disc; text-align: left; max-width: 600px; margin: 0 auto;">
+                <li><strong>Tägliche Fakten:</strong> Erhalte jeden Morgen um 8 Uhr einen neuen, spannenden Fakt, der dir einen interessanten Start in den Tag ermöglicht.</li>
+                <li><strong>Persönliche Fakten:</strong> Entdecke Fakten zu Themen, die für dich persönlich von Interesse sind und die du durch normale Internet-Recherchen vielleicht nicht sofort finden würdest.</li>
+                <li><strong>Fakten teilen:</strong> Teile deine persönlichen Fakten ganz einfach mit Freunden und Familie über Messenger wie WhatsApp und bereichere deren Wissen ebenfalls.</li>
+                <li><strong>Wiedererkennungswert:</strong> Alle Fakten werden in einem leicht verständlichen und ansprechenden Format aufbereitet, damit du immer wieder Freude daran hast, Neues zu lernen.</li>
+            </ul>
+        </div>
+        
+        <!-- Kommende Features -->
+        <div class="section" id="comming_soon">
+            <h2>Kommende Features</h2>
+            <p>Factsy wächst stetig und wir arbeiten kontinuierlich an neuen Features, um dir noch mehr Möglichkeiten zu bieten. Hier ein Ausblick auf das, was bald verfügbar sein wird:</p>
+            <ul style="list-style-type: disc; text-align: left; max-width: 600px; margin: 0 auto;">
+                <li><strong>Tägliche Fakten teilen:</strong> Neben den persönlichen Fakten wird es zukünftig auch möglich sein, die täglichen Fakten mit anderen zu teilen, unter anderem über WhatsApp.</li>
+                <li><strong>Fakten-History:</strong> Du wirst in der Lage sein, auf deine vergangenen persönlichen und täglichen Fakten zuzugreifen. Die History speichert die letzten Einträge, und du kannst diese später erneut lesen oder teilen.</li>
+                <li><strong>Bewertungssystem:</strong> Ein Sterne-Bewertungssystem wird eingeführt, mit dem du Fakten bewerten kannst. Diese Bewertungen werden auch in der History angezeigt.</li>
+                <li><strong>iOS-Unterstützung:</strong> Factsy wird bald auch für iOS-Geräte verfügbar sein, sodass auch Apple-Nutzer von den Vorteilen profitieren können.</li>
+                <li><strong>Benutzerregistrierung:</strong> Anfangs wird Factsy im "Gast Modus" zur Verfügung stehen. Langfristig wollen wir Nutzern ermöglichen, sich mit einer E-Mail-Adresse und Passwort, Google- oder Apple-Konto uvm. zu registrieren.</li>
+                <li><strong>Dark Mode:</strong> Um die Augen zu schonen, wird Factsy auch einen Dark Mode bieten, den du ganz einfach aktivieren kannst.</li>
+                <li><strong>Reisebegleiter:</strong> Langfristig wird Factsy auch unterwegs ein praktischer Begleiter werden. Du erhältst Push-Benachrichtigungen über Sehenswürdigkeiten in deiner Nähe und passende spannende Fakten dazu. Zusätzlich kannst du dich direkt zu diesen Sehenswürdigkeiten navigieren lassen.</li>
+            </ul>
+        </div>
+        </div>
+        <!-- Screenshot-Slider -->
+        <div class="slider" id="Screenshots">
+            <h2>Screenshots</h2>
+            <p>Um dir einen bessere Eindruck von factsy zu verschaffen, klicke dich dazu einfach durch unsere Screenshots</p>
             <div class="slides">
-                <div class="slide"><img src="./src/images/screenshot1.png" alt="Screenshot 1"></div>
-                <div class="slide"><img src="./src/images/screenshot2.png" alt="Screenshot 2"></div>
-                <div class="slide"><img src="./src/images/screenshot3.png" alt="Screenshot 3"></div>
+                <div class="slide"><img src="./src/images/screenshot1.png" alt="Bild 1"></div>
+                <div class="slide"><img src="./src/images/screenshot2.png" alt="Bild 2"></div>
+                <div class="slide"><img src="./src/images/screenshot3.png" alt="Bild 3"></div>
             </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
         </div>
 
-        <p>Du hast interesse an factsy bekommen? <br>
-            Trage dich in unsere Liste ein, um über den start der Beta informiert zu werden. <br>
-            Wir freuen uns auf dich!
-            </p>
-
-        <p>Viele Grüß<br>Dein factsy Team</p>
-
-        <div class="google-form">
+        <!-- Anmeldung mit Google Forms -->
+        <h2>Beta Anmeldung</h2>
+        <p>Wir konnten dein Interesse an factsy wecken, dann melde dich doch einfach für unsere Beta an.</p>
+        <div class="google-form" id="anmeldung">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdsdI5U6_d0DBb1TytcgJ3PTtNoRTYoQCx7PFN446D88vDlsw/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">Lädt...</iframe>
         </div>
     </div>
 
-    <footer>
-        <a href="#">Impressum</a> | <a href="#">Datenschutz</a>
-    </footer>
-
-
     <script>
-        let slideIndex = 0;
-        const slides = document.querySelector(".slides");
-        const totalSlides = document.querySelectorAll(".slides img").length;
-
-        function moveSlide(direction) {
-            slideIndex += direction;
-            if (slideIndex >= totalSlides) slideIndex = 0;
-            if (slideIndex < 0) slideIndex = totalSlides - 1;
-            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        
+        function updateSlider() {
+            const offset = -currentIndex * 100; // Berechnet den Versatz für den aktuellen Slide
+            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
         }
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        });
     </script>
 
 </body>
